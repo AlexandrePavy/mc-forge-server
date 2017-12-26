@@ -8,4 +8,5 @@ banned-ips.json
 banned-players.json
 ops.json
 usercache.json
+usernamecache.json
 whitelist.json
