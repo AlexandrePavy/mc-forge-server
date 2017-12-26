@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# NOT WORKING NEED REWORK
+# NOT WORKING WITH CRONS NEED REWORK
 SERVER_FOLDER=/home/minecraft/mc-forge-server
 
 echo "[$(date)] Starting restart script [v0.1.0]" >> $SERVER_FOLDER/MCServerRestartLog.txt 2>&1
@@ -34,6 +34,6 @@ done
     echo "[$(date)] Server stopped" >> $SERVER_FOLDER/MCServerRestartLog.txt 2>&1
 
     echo "[$(date)] Starting server" >> $SERVER_FOLDER/MCServerRestartLog.txt 2>&1
-    screen -dmS "MinecraftServer" java -Xmx6G -Xms6G -jar forge-1.12.2-14.23.0.2545-universal.jar
+    screen -dmS "MinecraftServer" java -Xmx6G -Xms6G -jar forge-1.12.2-14.23.1.2555-universal.jar
 
     echo "[$(date)] End restart script [v0.1.0]" >> $SERVER_FOLDER/MCServerRestartLog.txt 2>&1
