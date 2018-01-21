@@ -3,4 +3,4 @@
 DATE=`date +%Y-%m-%d`
 
 tar czvf backup-$DATE.tar.gz world/
-mv backup-$DATE.tar.gz ../backups/
+mv backup-$DATE.tar.gz ./backups/
