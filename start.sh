@@ -22,7 +22,7 @@ for SCREEN in $(screen -list MinecraftServer | grep -o '[0-9]\{3,\}\.\S*')
 counter=0
 while [ $(screen -list MinecraftServer | grep -c 'No Sockets found in') -lt 1 ]; do
     if [ $(( $counter % 10 )) -eq 0 ]; then
-        echo "[$(date)] A previous server is in use. Waiting for 10 seconds before starting server..." >> $SERVER_FO$
+        echo "[$(date)] A previous server is in use. Waiting for 10 seconds before starting server..." >> $SERVER_FOLDER/MCServerRestartLog.txt 2>&1
     fi
 
     sleep 1
@@ -34,6 +34,6 @@ done
     echo "[$(date)] Server stopped" >> $SERVER_FOLDER/MCServerRestartLog.txt 2>&1
 
     echo "[$(date)] Starting server" >> $SERVER_FOLDER/MCServerRestartLog.txt 2>&1
-    screen -dmS "MinecraftServer" java -Xmx6G -Xms6G -jar forge-1.12.2-14.23.1.2555-universal.jar
+    screen -dmS "MinecraftServer" java -Xmx6G -Xms6G -jar $SERVER_FOLDER/forge-1.12.2-14.23.1.2555-universal.jar
 
     echo "[$(date)] End restart script [v0.1.0]" >> $SERVER_FOLDER/MCServerRestartLog.txt 2>&1
